@@ -28,15 +28,8 @@ end)
 function updateMinimap(isBig,isRender)
     if Grun and Gsend and Gstop then 
         if isBig or not isRender then 
-            Grun("SET_RADAR_DISPLAY")
-            Gsend(false)
-            Gstop()
             Scaleforms.EndScaleformMovie('nbk_minimap_untransparent')
         else 
-            Grun("SET_RADAR_DISPLAY")
-            Gsend(true)
-            Gstop()
-            
             Scaleforms.DrawScaleformMovie('nbk_minimap_untransparent',hud.x,hud.y,hud.width,hud.height, 255, 255, 255, 255,0)
             
         end 
