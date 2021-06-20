@@ -1,7 +1,10 @@
 local myui_width = 191 - 10
 local myui_height = 136 - 10
 
+local Data = {0.06,0.0,1.0,1.25} 
+
 local Grun,Gsend,Gstop = nil,nil,nil 
+local nowscale = Data[3]
 local hud = nil 
 
 CreateThread(function()
@@ -48,7 +51,7 @@ while not IsMinimapRendering() do
                 Grun("SET_RADAR_DISPLAY")
                 Gsend(true)
                 Gstop()
-                Scaleforms.DrawScaleformMovie('nbk_minimap_untransparent',hud.x,hud.y,hud.width,hud.height, 255, 255, 255, 255,3)
+                Scaleforms.DrawScaleformMovie('nbk_minimap_untransparent',hud.x,hud.y,hud.width,hud.height, 255, 255, 255, 255,0)
             end 
         end 
     end 
