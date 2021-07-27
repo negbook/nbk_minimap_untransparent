@@ -5,14 +5,12 @@ games {'gta5'}
 
 client_scripts {
 '@threads/threads.lua',
-'@scaleforms/scaleforms.lua',
 'main.lua'
 }
 
 
 dependencies {
     'threads',
-    'scaleforms',
     'nbk_circle',
     'nbk_minimap_untransparent_stream'
 }

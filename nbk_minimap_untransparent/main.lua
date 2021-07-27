@@ -13,7 +13,7 @@ while not IsMinimapRendering() do
     end 
     CreateThread(function()
         while not Grun do 
-            Scaleforms.CallScaleformMovie('nbk_minimap_noso_custom',function(run,send,stop,handle)
+            Threads.Scaleforms.Call('nbk_minimap_untransparent',function(run,send,stop,handle)
                 Grun,Gsend,Gstop = run,send,stop
                 while not hud do  
                     TriggerEvent('nbk_circle:RequestHudDimensionsFromMyUI',myui_width,myui_height,function(obj)
@@ -46,12 +46,12 @@ while not IsMinimapRendering() do
                 Grun("SET_RADAR_DISPLAY")
                 Gsend(false)
                 Gstop()
-                Scaleforms.EndScaleformMovie('nbk_minimap_untransparent')
+                Threads.Scaleforms.End('nbk_minimap_untransparent')
             else 
                 Grun("SET_RADAR_DISPLAY")
                 Gsend(true)
                 Gstop()
-                Scaleforms.DrawScaleformMovie('nbk_minimap_untransparent',hud.x,hud.y,hud.width,hud.height, 255, 255, 255, 255,0)
+                Threads.Scaleforms.Draw('nbk_minimap_untransparent',hud.x,hud.y,hud.width,hud.height, 255, 255, 255, 255,0)
             end 
         end 
     end 
